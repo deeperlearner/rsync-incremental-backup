@@ -102,7 +102,7 @@ touch "${rotationLockFilePath}"
 writeToLog "[$(${dateCmd} -Is)] Backup begins\\n"
 
 # Do the backup
-if rsync -achv --progress --timeout="${timeout}" --delete -W --link-dest="${bak1}/" \
+if rsync -ahv --progress --timeout="${timeout}" --delete -W --link-dest="${bak1}/" \
 	--log-file="${logFile}" --exclude="${ownFolderPath}" --chmod=+r \
 	--exclude-from="${exclusionFilePath}" "${src}/" "${bak0}/"
 then
